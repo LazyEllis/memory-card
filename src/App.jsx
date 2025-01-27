@@ -4,6 +4,10 @@ import Card from "./components/Card";
 
 const App = () => {
   const [images, setImages] = useState([]);
+  const [selectedImageIDs, setSelectedImageIDs] = useState([]);
+  const [score, setScore] = useState(0);
+  const [bestScore, setBestScore] = useState(0);
+  const [isGameOver, setIsGameOver] = useState(false);
 
   useEffect(() => {
     const getImages = async () => {
@@ -20,18 +24,53 @@ const App = () => {
     getImages();
   }, []);
 
+  useEffect(() => {
+    const modal = document.querySelector("dialog");
+    isGameOver ? modal.showModal() : modal.close();
+  }, [isGameOver]);
+
+  const isGameWon = selectedImageIDs.length === images.length;
+
+  const handleCardClick = (id) => {
+    if (selectedImageIDs.includes(id)) {
+      setIsGameOver(true);
+    } else {
+      setSelectedImageIDs([...selectedImageIDs, id]);
+      setScore(score + 1);
+      if (selectedImageIDs.length === images.length - 1) setIsGameOver(true);
+    }
+  };
+
+  const handleRetryClick = () => {
+    setSelectedImageIDs([]);
+    setScore(0);
+    if (score > bestScore) setBestScore(score);
+    setIsGameOver(false);
+  };
+
   return (
     <>
-      <h1>Memory Game</h1>
+      <header>
+        <h1>Memory Game</h1>
+        <div className="scoreboard">
+          <div>Score: {score}</div>
+          <div>Best Score: {bestScore}</div>
+        </div>
+      </header>
       <div className={styles["card-grid"]}>
         {images.map((image) => (
           <Card
             key={image.id}
             image={image.urls.raw + "&fm=jpg&w=888"}
             text={image.alt_description}
+            onClick={() => handleCardClick(image.id)}
           />
         ))}
       </div>
+      <dialog>
+        <p>You {isGameWon ? "Win" : "Lose"}!!!</p>
+        <button onClick={handleRetryClick}>Play Again</button>
+      </dialog>
     </>
   );
 };

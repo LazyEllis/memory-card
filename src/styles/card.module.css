@@ -6,6 +6,10 @@
   gap: 10px;
 }
 
+.card:hover {
+  background-color: yellow;
+}
+
 img {
   height: 265px;
   object-fit: cover;
