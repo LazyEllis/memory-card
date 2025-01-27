@@ -31,6 +31,18 @@ const App = () => {
 
   const isGameWon = selectedImageIDs.length === images.length;
 
+  const shuffleCards = (array) => {
+    const newArray = [...array];
+    for (let index = newArray.length - 1; index > 0; index--) {
+      const randomIndex = Math.floor(Math.random() * (index + 1));
+      [newArray[index], newArray[randomIndex]] = [
+        newArray[randomIndex],
+        newArray[index],
+      ];
+    }
+    return newArray;
+  };
+
   const handleCardClick = (id) => {
     if (selectedImageIDs.includes(id)) {
       setIsGameOver(true);
@@ -39,6 +51,8 @@ const App = () => {
       setScore(score + 1);
       if (selectedImageIDs.length === images.length - 1) setIsGameOver(true);
     }
+
+    setImages(shuffleCards(images));
   };
 
   const handleRetryClick = () => {
