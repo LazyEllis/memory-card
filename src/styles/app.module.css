@@ -1,10 +1,10 @@
 body {
   padding: 12px 20px;
   background-color: var(--base-bg-color);
+  color: var(--base-text-color);
 }
 
 header {
-  color: var(--base-text-color);
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -12,7 +12,6 @@ header {
 }
 
 h1 {
-  margin: 0;
   font-size: calc(4rem / 3);
   text-align: center;
 }
@@ -22,13 +21,45 @@ h1 {
   justify-content: space-evenly;
 }
 
-dialog::backdrop {
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
 .card-grid {
   display: grid;
   gap: 20px;
   grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
   padding: 0 7.5px;
+}
+
+dialog {
+  padding: 0;
+  border: none;
+  font-size: 0.75rem;
+  background-color: var(--secondary-text-color);
+  color: var(--base-text-color);
+  text-align: center;
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+dialog p {
+  padding: 46px 46px 22px;
+  background-color: var(--modal-header-color);
+  width: 100%;
+}
+
+dialog button {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background-color: inherit;
+  border: none;
+  width: 100%;
+  padding: 5px 0;
+  margin: 20px 0;
+  cursor: pointer;
+}
+
+dialog button:hover {
+  background-color: var(--secondary-bg-color);
+  color: var(--secondary-text-color);
 }

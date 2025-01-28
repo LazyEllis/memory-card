@@ -17,6 +17,7 @@
   --secondary-text-color: #0f1c31;
   --primary-border-color: #383e4f;
   --secondary-border-color: #df3e53;
+  --modal-header-color: #363f4a;
 }
 
 * {
@@ -24,6 +25,11 @@
 }
 
 body {
-  margin: 0;
   font-family: "DIN Next LT Pro Regular";
+}
+
+body,
+h1,
+p {
+  margin: 0;
 }

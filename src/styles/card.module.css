@@ -6,6 +6,7 @@
   border: 2px solid var(--primary-border-color);
   padding: 20px 15px;
   gap: 15px;
+  cursor: pointer;
 }
 
 .card:hover {
