@@ -6,10 +6,22 @@
   font-style: normal;
 }
 
+:root {
+  font-size: 24px;
+  --base-bg-color: #212121;
+  --base-text-color: #fefefe;
+  --secondary-base-text-color: #6395b9;
+  --primary-bg-color: #222530;
+  --primary-text-color: #58f4e0;
+  --secondary-bg-color: #dcff59;
+  --secondary-text-color: #0f1c31;
+}
+
 * {
-  box-sizing: content-box;
+  box-sizing: border-box;
 }
 
 body {
+  margin: 0;
   font-family: "DIN Next LT Pro Regular";
 }

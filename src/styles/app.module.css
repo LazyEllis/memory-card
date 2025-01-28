@@ -1,3 +1,27 @@
+body {
+  padding: 12px 20px;
+  background-color: var(--base-bg-color);
+}
+
+header {
+  color: var(--base-text-color);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+h1 {
+  margin: 0;
+  font-size: calc(4rem / 3);
+  text-align: center;
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 dialog::backdrop {
   background-color: rgba(0, 0, 0, 0.5);
 }

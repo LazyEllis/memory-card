@@ -66,7 +66,7 @@ const App = () => {
     <>
       <header>
         <h1>Memory Game</h1>
-        <div className="scoreboard">
+        <div className={styles.scoreboard}>
           <div>Score: {score}</div>
           <div>Best Score: {bestScore}</div>
         </div>
