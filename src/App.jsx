@@ -75,7 +75,7 @@ const App = () => {
         {images.map((image) => (
           <Card
             key={image.id}
-            image={image.urls.raw + "&fm=jpg&w=888"}
+            image={image.urls.raw + "&fm=jpg&w=740&fit=max"}
             text={image.alt_description}
             onClick={() => handleCardClick(image.id)}
           />

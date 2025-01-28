@@ -1,26 +1,25 @@
 .card {
   display: flex;
   flex-direction: column;
-  background-color: burlywood;
-  padding: 10px;
-  gap: 10px;
+  background-color: var(--primary-bg-color);
+  color: var(--primary-text-color);
+  border: 2px solid var(--primary-border-color);
+  padding: 20px 15px;
+  gap: 15px;
 }
 
 .card:hover {
-  background-color: yellow;
+  background-color: var(--secondary-bg-color);
+  color: var(--secondary-text-color);
+  border: 2px solid var(--secondary-border-color);
 }
 
 img {
-  height: 265px;
+  height: 280px;
   object-fit: cover;
-}
-
-.card,
-.card img {
-  border-radius: 15px;
+  padding: 0 10.5px;
 }
 
 .card-text {
-  padding: 11.5px;
   text-align: center;
 }
