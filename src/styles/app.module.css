@@ -54,7 +54,7 @@ dialog button {
   background-color: inherit;
   border: none;
   width: 100%;
-  padding: 5px 0;
+  padding: 10px 0;
   margin: 20px 0;
   cursor: pointer;
 }
@@ -62,4 +62,22 @@ dialog button {
 dialog button:hover {
   background-color: var(--secondary-bg-color);
   color: var(--secondary-text-color);
+}
+
+@media (min-width: 576px) {
+  body {
+    padding: 48px 60px;
+  }
+
+  header {
+    margin-bottom: 30px;
+  }
+
+  .card-grid {
+    padding: 0 32px;
+  }
+
+  dialog {
+    width: 48%;
+  }
 }
