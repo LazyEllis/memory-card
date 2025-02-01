@@ -1,10 +1,10 @@
 import styles from "../styles/card.module.css";
 
 const Card = ({ image, text, onClick }) => (
-  <div className={styles.card} onClick={onClick}>
-    <img src={image} />
+  <button className={styles.card} onClick={onClick}>
+    <img src={image} alt="" />
     <div className={styles["card-text"]}>{text}</div>
-  </div>
+  </button>
 );
 
 export default Card;

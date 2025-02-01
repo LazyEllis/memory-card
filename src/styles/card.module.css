@@ -1,5 +1,7 @@
 .card {
   display: flex;
+  font-size: inherit;
+  font-family: inherit;
   flex-direction: column;
   background-color: var(--primary-bg-color);
   color: var(--primary-text-color);

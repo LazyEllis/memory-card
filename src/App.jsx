@@ -71,7 +71,7 @@ const App = () => {
           <div>Best Score: {bestScore}</div>
         </div>
       </header>
-      <div className={styles["card-grid"]}>
+      <main className={styles["card-grid"]}>
         {images.map((image) => (
           <Card
             key={image.id}
@@ -80,7 +80,7 @@ const App = () => {
             onClick={() => handleCardClick(image.id)}
           />
         ))}
-      </div>
+      </main>
       <dialog>
         <p>You {isGameWon ? "Win" : "Lose"}!!!</p>
         <button onClick={handleRetryClick}>Play Again</button>
